@@ -1,0 +1,1 @@
+This library abstracts some of the serial functions in the RP2040 C SDK. it instatiates a 1K buffer to read incoming an incoming serial stream and then a few functions to modify what is in the buffer and then return of true if what is in the buffer matches an incoming string of a given length.  See the UART.h file for more detail.
