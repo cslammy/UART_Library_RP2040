@@ -11,9 +11,31 @@
 // global buffer for uart reads
 static char uart_buffer[1024]; 
 
+/****************USAGE**************
+put this in endless loop in main
+READ_UART_BUFFER; 
+
+then trap a matched string you type into your terminal program
+printf("%s\n",uart_buffer); // show what you just typed
+    if (UART_READ("REBOOT"))
+        {
+        reset_usb_boot(0,0);  reboot PICO
+        } 
+    else
+        {
+        // any other entry into the buffer does whatever is coded in here.
+        }
+    }
+
+*/
+
+
  //******************MACROS ***************************
 
-//put this in endless loop in main
+
+
+// next macro defines what READ_UART_BUFFER does
+
 #define READ_UART_BUFFER scanf("%1024s",uart_buffer) 
 
 #define ONBOARD_LED 25 // pico onboard LED
